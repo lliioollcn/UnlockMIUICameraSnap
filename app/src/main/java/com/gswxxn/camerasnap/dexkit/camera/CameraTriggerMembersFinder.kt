@@ -16,13 +16,13 @@ import io.luckypray.dexkit.builder.BatchFindArgs
 object CameraTriggerMembersFinder: BaseFinder() {
 
     override fun prepareBatchFindClassesUsingStrings(): BatchFindArgs.Builder.() -> Unit = {
-        addQuery(CameraQueryKey.SnapTrigger, arrayOf("shouldQuitSnap isNonUI = "))
+        addQuery(CameraQueryKey.SnapTrigger, arrayOf("shouldQuitSnap quitSnap = "))
         addQuery(CameraQueryKey.SnapCamera, arrayOf("takeSnap: CameraDevice is opening or was already closed."))
     }
 
     override fun prepareBatchFindMethodsUsingStrings(): BatchFindArgs.Builder.() -> Unit = {
         addQuery(CameraQueryKey.SnapTrigger_mVibrator, arrayOf("call vibrate to notify"))
-        addQuery(CameraQueryKey.SnapTrigger_mShouldQuitSnap, arrayOf("shouldQuitSnap isNonUI = "))
+        addQuery(CameraQueryKey.SnapTrigger_mShouldQuitSnap, arrayOf("shouldQuitSnap quitSnap = "))
         addQuery(CameraQueryKey.SnapTrigger_mSnapRunner, arrayOf("isScreenOn is true, stop take snap"))
     }
 

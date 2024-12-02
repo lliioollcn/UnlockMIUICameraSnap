@@ -23,7 +23,7 @@ object CameraSnapMembersFinder: BaseFinder(){
     override fun prepareBatchFindClassesUsingStrings(): BatchFindArgs.Builder.() -> Unit = {
         addQuery(CameraQueryKey.SnapCamera, arrayOf("takeSnap: CameraDevice is opening or was already closed."))
         addQuery(CameraQueryKey.CameraCapabilities, arrayOf("addStreamConfigurationToList: but the key is null!"))
-        addQuery(CameraQueryKey.SnapTrigger, arrayOf("shouldQuitSnap isNonUI = "))
+        addQuery(CameraQueryKey.SnapTrigger, arrayOf("shouldQuitSnap quitSnap = "))
         addQuery(CameraQueryKey.PictureInfo, arrayOf("setFrontMirror JSONException occurs "))
     }
 
